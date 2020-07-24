@@ -12,9 +12,10 @@ input_sub.click(function (e) {
     return;
   }
   $.ajax({
-    url: "http://localhost:8080/api/v1/admin/user/login",
+    url: BigNew.user_login,
     type: "post",
     data: from.serialize(),
+    headers: false,
     success: (info) => {
       // console.log(info);
       $("#myModal").find("#modaltText").text(info.msg);
