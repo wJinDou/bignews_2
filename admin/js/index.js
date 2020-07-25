@@ -27,22 +27,22 @@ $(function () {
         })
     })
 
-
-   //左侧导航栏
-   var menu = $('.menu');
-   var ul = menu.children(".level02");
-   var list = ul.children("");
-
-   menu.children(".level01").click(function () {
-     $(this).addClass("active").siblings().removeClass("active");
-
-     if ($(this).index() === 1) {
-       ul.slideToggle();
-     }
-   })
-   list.click(function(){
-     $(this).addClass("active").siblings().removeClass("active");
-   })
-   
+     //左侧导航栏
+     var menu = $('.menu');
+     var ul = menu.children(".level02");
+     var list = ul.children("li");
+ 
+     menu.children(".level01").click(function () {
+       $(this).addClass("active").siblings().removeClass("active");
+ 
+       if ($(this).index() === 1) {
+         ul.slideToggle();
+         ul.find('li:first-child').click();
+         $('#main_body iframe').attr("src","./article_list.html")
+       }
+     })
+     list.click(function(){
+       $(this).addClass("active").siblings().removeClass("active");
+     })
 
 })
